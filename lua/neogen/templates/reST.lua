@@ -23,11 +23,12 @@ return {
         {
             required = i.Tparam,
             type = { "func" },
+            after_each = ":type %s: %s",
         },
     },
     { i.ClassAttribute, ":param %s: $1" },
     { i.Throw, ":raises %s: $1", { type = { "func" } } },
     { i.Return, ":return: $1", { type = { "func" }, after_each = ":rtype: $1" } },
-    { i.ReturnTypeHint, ":return: $1", { type = { "func" } } },
+    { i.ReturnTypeHint, ":return: $1", { type = { "func" }, after_each = ":rtype: %s" } },
     { nil, '"""' },
 }
